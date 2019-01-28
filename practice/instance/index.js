@@ -7,23 +7,23 @@ import Vue from 'vue'
 
 const app = new Vue({
     // el:"#root",
-    data:{
-        text:0
+    data: {
+        text: 0
     },
     // watch:{
     //   text(newText,oldText){
     //       console.log(`${newText} : ${oldText}`)
     //   }
     // },
-    template:"<div ref='div'>{{text}}</div>"
+    template: "<div ref='div'>{{text}}</div>"
 })
 app.$mount('#root')
 
 setInterval(function () {
     // app.text+=1
     // app.$forceUpdate()   强制组建渲染，建议在初始化组件时进行默认赋值
-    app.$data.text+=1
-},1000)
+    app.$data.text += 1
+}, 1000)
 
 // console.log(app.$data)
 // console.log(app.$props)
@@ -56,8 +56,8 @@ setInterval(function () {
 //     unWatch()
 // },2000)
 
-app.$on('test',(a,b)=>{
+app.$on('test', (a, b) => {
     console.log(`test emited ${a}  ${b}`)
 })
 
-app.$emit('test',6,2)
+app.$emit('test', 6, 2)
